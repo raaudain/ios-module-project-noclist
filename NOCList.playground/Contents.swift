@@ -124,14 +124,12 @@ func levels() {
     
     for agent in agents {
         switch agent.accessLevel {
-        case ...4:
-            low += 1
         case 5...7:
             mid += 1
         case 8...:
             high += 1
         default:
-            "No level"
+            low += 1
         }
     }
     
@@ -148,7 +146,16 @@ levels()
 //: Create and call a function that prints the cover names and access levels of all agents, but the list should be sorted by access level, in ascending order.
 
 func sort() {
+    var arr = [Any]()
+
     for agent in agents {
         
+        arr.append((agent.coverName, agent.accessLevel))
     }
+    
+
+    
+    //print(arr)
 }
+
+sort()
